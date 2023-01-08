@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div class="div">
+    <button type="button" id="raschet">Рассчитать</button>
+</div>
+
+<body>
+ <script>
+
+raschet.addEventListener('click',() =>{
+    
+    let array = [];
+
+for ( let i = 0; i < 10; i++ ) {
+
+    array.push(Math.round( Math.random() * 10));
+
+}
+if (Math.random() > 0.5) {
+    let i= 0;
+    array[i] *= -1;
+    array.push(Math.round( Math.random() * 10));
+ 
+}
+
+document.write( 'Сгенерировали : ' + array + '<br>' );
+
+document.write( 'Максимальное : ' + Math.max(...array) + '<br>' );//minimalnoe znachenie ;
+
+document.write( 'Минимальное : ' + Math.min(...array) + '<br>' );//max znachenie;
+
+function arraySum(array){
+let sum = 0;
+let sred = 0;
+for(var i = 0; i < array.length; i++){
+    sum += array[i];
+    }
+    sred = (Math.round(sum / array.length));
+document.write( 'Сумма чисел: ' + sum + '<br>' );//summa massiva;
+document.write( 'Среднее арифметическое: ' + sred + '<br>' );//srednee arifmeticheskoe;
+
+}
+arraySum(array);
+
+function arraymultiplication(array){
+let multiplication = 1;
+for(let i = 0; i < array.length; i++){
+    multiplication *= array[i];
+    }
+document.write( 'Произведение чисел : ' + multiplication + '<br>' );//proizvedenie massiva;
+}
+arraymultiplication(array);
+
+}) ;  
+    
+</script>   
+</body>
+</html>
